@@ -137,3 +137,7 @@ export function canAccess(role: Role, route: string): boolean {
   const allowed = ROUTE_ROLES[route] || ['ADMIN'];
   return allowed.includes(role);
 }
+// Add this at the very bottom of src/lib/auth.ts
+export function genId(): string {
+  return 'u_' + Math.random().toString(36).substring(2, 9);
+}
